@@ -64,7 +64,7 @@ Micromanager, а также все сопутствующие пакеты и н
         "json-rpc-listen-host": "0.0.0.0",
         "json-rpc-listen-port": 7089,
 
-        "run-cmd": "/usr/local/bin/ffmpeg -i %src% %ffmpeg-params% -f mpegts udp://@%dsthost%:%dstport%?pkt_size=%payloadsize%",
+        "run-cmd": "%transcoder% -i %src% %ffmpeg-params% -f mpegts udp://@%dsthost%:%dstport%?pkt_size=%payloadsize%",
         "run-cmd-presets": [
             {
                 "name": "custom-preset",
