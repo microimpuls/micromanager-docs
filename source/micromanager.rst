@@ -236,6 +236,10 @@ name ``str``
 run-cmd ``str``
   Команда запуска, идентично **run-cmd**.
 
+naming-template ``str``
+  Шаблон имени выходного файла, если пресет используется для транскодирования файла при инжестировании.
+  Идентично **vod-default-naming-template**.
+
 .. _micromanager-processes-to-watch:
 
 Описание processes-to-watch
