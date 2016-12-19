@@ -172,7 +172,7 @@ run-cmd-presets ``list``
   Формат пресета команды описан в :ref:`run-cmd-presets <micromanager-run-cmd-presets>`.
 
 transcoder-path ``str``
-  Путь до ffmpeg. Используется для перекодирования файлов в момент инжестирования VOD.
+  Путь до процесса транскодера, например /usr/local/bin/ffmpeg.
 
 ffprobe-path ``str``
   Путь до ffprobe. Используется для определения мета-информации о видео-файле для VOD.
