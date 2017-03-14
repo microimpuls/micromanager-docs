@@ -403,6 +403,23 @@ parameters ``str``
 destination ``str``
   Поле %destination% шаблона процесса.
   
+Например, при шаблоне ``scp %parameters% %full_path% %address%:%destination%/%preset_name%/``, пути до файла ассета ``/var/vod/default/file.ts``,
+использовании пресета по умолчанию и следующих параметрах адреса:
+  
+    "vod-distribution-addresses": [
+      {
+        "enabled": true,
+        "address": "user@127.0.0.1",
+        "destination": "/var/vod/files",
+        "parameters": "-i /home/.ssh/id_rsa" 
+      }
+    ]
+
+команда дистрибьюции будет выглядеть как ``scp -i /home/.ssh/id_rsa /var/vod/default/file.ts user@127.0.0.1:/var/vod/files/default/``.
+  
+*Примечание 1: дистрибьюция производится последовательно по каждому адресу после окончания инжестирования.*
+*Примечание 2: при использовании scp для дистрибьюции необходимо внести хост в список известных ssh.*
+  
 .. _middleware-integration:
 
 *************
