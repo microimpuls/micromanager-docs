@@ -7,4 +7,10 @@ Micromanager - универсальный менеджер процессов т
 .. toctree::
    :maxdepth: 2
 
-   micromanager.rst
+   description.rst
+   install_and_configuration.rst
+   log.rst
+   json_rpc_api.rst
+   middleware_integration.rst
+   troubleshooting.rst
+   log_message_list.rst
