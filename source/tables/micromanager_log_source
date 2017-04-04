@@ -1,0 +1,126 @@
+\\\\\ Формат \\ Описание \\ Уровень \\ Пример
+
+asset
+\\\ (%src_file) ingestion process thread stopped \\ Поток процесса инжестирования завершён \\ INFO \\ Thu Mar 30 17:30:52 2017 INFO ingestion_thread_handler[29731]: (ED.mp4) ingestion process thread stopped
+\\\ ingestion control thread started \\ Поток мониторинга процесса инжестирования запущен \\ INFO \\ Thu Mar 30 17:30:35 2017 INFO main_thread_handler[29731]: ingestion control thread started
+\\\ ingestion control thread stopped \\ Поток мониторинга процесса инжестирования завершён \\ INFO \\ Thu Mar 30 17:30:51 2017 INFO main_thread_handler[29731]: ingestion control thread stopped
+\\\ ingestion already started: src file = %file1, dst file = %file2 \\ Попытка запустить несколько процессов инжестирования с одним и тем же файлом назначения \\ WARNING \\ Fri Mar 31 11:30:20 2017 WARNING run_ingestion[19855]: ingestion already started: src file = ED.mp4, dst file = /default/ED.mp4
+\\\ run ingestion: path %file, preset name: %preset \\ Запущено инжестирование ассета %file с пресетом %preset \\ INFO \\ Thu Mar 30 17:30:35 2017 INFO run_ingestion_process[29731]: (ED.mp4) run ingestion, target file: /var/vod//default/ED.mp4
+\\\ ingestion failed: file %file_name does not exist \\ Ошибка инжестирования: исходный файл не существует или не доступен \\ WARNING \\ Fri Mar 31 11:29:49 2017 WARNING run_ingestion[19855]: ingestion failed: target file /default/ED.mp4 does not exist
+\\\ ingestion failed: target file %file already exists \\ Ошибка инжестирования: файл назначения уже существует \\ WARNING \\ Fri Mar 31 11:29:49 2017 WARNING run_ingestion[19855]: ingestion failed: target file /default/ED.mp4 already exists
+\\\ ingestion is starting: src file = %file1, dst file = %file2 \\ Инициализация инжестирования \\ INFO \\ Thu Mar 30 17:30:35 2017 INFO run_ingestion[29731]: ingestion is starting: src file = ED.mp4, dst file = /default/%src_path_wo_ext%.mp4
+\\\ (%src_file) copy %target_file to %address \\ Дистрибьюция: копирование файла %target_file на адрес %address \\ INFO \\ Fri Mar 31 11:45:11 2017 INFO run_distribution_process[21564]: (ED.mp4) copy /default/ED.mp4 to user@127.0.0.1
+\\\ (%src_file) can't make pipe: %error \\ Ошибка вызова pipe() (при run-link-strerr = true) \\ CRITICAL \\ Fri Mar 31 11:40:56 2017 INFO run_ingestion_process[21564]: (ED.mp4) can't make pipe: Broken pipe
+\\\ (%src_file) %type failed: fork failed with error %error \\ Ошибка вызова fork() при запуске процесса дистрибьюции или инжестирования \\ CRITICAL \\ Fri Mar 31 11:40:56 2017 CRITICAL run_ingestion_process[21564]: (ED.mp4) ingestion failed: fork failed with error Too many open files
+\\\ (%src_file) distribution address list is empty \\ Дистрибьюция ассетов включена, но список адресов пуст \\ WARNING \\ Fri Mar 31 11:40:56 2017 WARNING distribute_to_all[21564]: (ED.mp4) distribution address list is empty
+\\\ (%src_file) run distribution for %file \\ Запуск дистрибьюции для ассета %file \\ INFO \\ Fri Mar 31 11:45:11 2017 INFO distribute_to_all[21564]: (ED.mp4) run distribution for /default/ED.mp4
+\\\ (%src_file) add ingestion to watchlist \\ Инжестирование добавлено в список наблюдения \\ INFO \\ Thu Mar 30 17:30:35 2017 INFO add_injection_to_list[29731]: (ED.mp4) add ingestion to watchlist
+\\\ (%src_file) remove ingestion from watchlist \\ Инжестирование удалено из списка наблюдения \\ INFO \\ Fri Mar 31 11:44:46 2017 INFO remove_injection_from_list[21564]: (hls.conf) remove ingestion from watchlist
+\\\ (%src_file) %type error \\ Ошибка выполнения процесса инжестирования или дестрибьюции \\ ERROR \\ Fri Mar 31 11:42:30 2017 ERROR on_process_exited_with_non_zero[12140]: (ED.mp4) distribution error: cp: target ‘/var/vod/files’ is not a directory
+\\\ (%src_file) %type error: can't read stderr \\ Ошибка выполнения процесса инжестирования или дестрибьюции, невозможно прочитать stderr (при run-link-strerr = true) \\ ERROR \\ Fri Mar 31 11:42:30 2017 ERROR on_process_exited_with_non_zero[12140]: (ED.mp4) distribution error: can't read stderr
+\\\ (%src_file) distribution process PID not found \\ Не найднен PID процесса дистрибьюции \\ WARNING \\ Fri Mar 31 11:45:13 2017 WARNING watch_distribution_process[21564]: (ED.mp4) distribution process PID not found
+\\\ (%src_file) distribution process executed, PID %pid \\ Запущен процесс дистрибьюции с PID %pid \\ INFO \\  Fri Mar 31 11:20:12 2017 INFO watch_distribution_process[21564]: (ED.mp4) distribution process executed, PID 243
+\\\ (%src_file) distribution process app exited with code %code \\ Процесс дистрибьюции завершён с кодом выхода %code \\ INFO \\ Fri Mar 31 11:45:13 2017 INFO watch_distribution_process[21564]: (ED.mp4) distribution process app exited with code 0
+\\\ (%src_file) distribution process app exited via signal %sig \\ Процесс дистрибьюции завершён сигналом %sig \\ WARNING \\  Fri Mar 31 11:40:10 2017 WARNING watch_distribution_process[21564]: (ED.mp4) distribution process app exited via signal 15
+\\\ (%src_file) stopping, process %pid will be killed \\ micromanager завершается, процесс с PID %pid будет остановлен \\ INFO \\ Fri Mar 31 11:40:10 2017 INFO watch_distribution_process[21564]: (ED.mp4) stopping, process 243 will be killed
+\\\ (%src_file) ingestion completed \\ Инжестирование успешно завершено \\ INFO \\ Fri Mar 31 11:30:47 2017 INFO on_ingestion_succeed[19855]: (ED.mp4) ingestion completed
+\\\ (%src_file) start distribution \\ Инжестирование успешно завершено, начата дистрибьюция \\ INFO \\ Fri Mar 31 11:45:11 2017 INFO on_ingestion_succeed[21564]: (ED.mp4) start distribution
+\\\ (%src_file) delete file \\ Инжестирование успешно завершено, исходный файл будет удалён \\ INFO \\ Fri Mar 31 11:43:28 2017 INFO on_ingestion_succeed[12140]: (ED.mp4) delete file /var/vod/default/ED.mp4
+\\\ (%src_file) file deleting error \\ Ошибка удаления файла после инжестирования \\ WARNING \\ Fri Mar 31 11:43:30 2017 WARNING on_ingestion_succeed[12140]: (ED.mp4) file deleting error
+\\\ (%src_file) PID not found \\ Не найднен PID процесса инжестирования \\ WARNING \\ Fri Mar 31 11:45:13 2017 WARNING watch_ingestion_process[21564]: (ED.mp4) PID not found
+\\\ (%src_file) ingestion process executed, PID %pid \\ Запущен процесс инжестирования с PID %pid \\ INFO \\ Thu Mar 30 17:30:37 2017 INFO watch_ingestion_process[29731]: (ED.mp4) ingestion process executed, PID 29759
+\\\ (%src_file) ingestion process app exited with code %code \\ Процесс инжестирования завершён с кодом выхода %code \\ INFO \\ Thu Mar 30 17:30:52 2017 INFO watch_ingestion_process[29731]: (ED.mp4) ingestion process app exited with code 255
+\\\ (%src_file) ingestion process app exited via signal %sig \\ Процесс инжестирования завершён сигналом %sig \\ WARNING \\ Thu Mar 30 17:30:52 2017 WARNING watch_ingestion_process[29731]: (ED.mp4) ingestion process app exited via signal 15
+\\\ (%src_file) ingestion failed: %error \\ Ошибка инициализации инжестирования \\ ERROR \\ Fri Mar 31 11:29:49 2017 WARNING run_ingestion[19855]: ingestion failed: target file /default/ED.mp4 already exists
+\\\ (%src_file) run ingestion process: src = %file1, dst = %file2 \\ Запуск инжестировани для ассета %file1, файла назначения: %file2 \\ INFO \\ Fri Mar 31 11:44:38 2017 INFO run_ingestion_process[21564]: run ingestion process: src = /var/vod_ingest/ED.mp4, dst = /var/vod//default/ED.mp4
+\\\ (%src_file) check ingestion \\ Мониторинг процесса инжестирования \\ DEBUG \\ Thu Mar 30 17:30:47 2017 DEBUG check_ingestion[29731]: (ED.mp4) check ingestion
+\\\ delete asset %file \\ Удаление ассета \\ INFO \\ Fri Mar 31 11:30:06 2017 INFO delete_asset[19855]: delete asset: default/ED.mp4
+\\\ delete file from ingest directory: %file \\ Удаление файла %file из директории инжестирования \\ INFO \\ Fri Mar 31 11:28:37 2017 DEBUG delete_file_from_ingest_directory[19855]: delete file from ingest directory: /var/vod_ingest/ED.mp4
+\\\ get all ingestions \\ Запрос списка всех процессов инжестирования \\ DEBUG \\ Fri Mar 31 11:35:02 2017 DEBUG get_all_ingestions[19855]: get all ingestions
+\\\ check files in %file \\ Проверка неинжестированных файлов в директории %file \\ DEBUG \\ Fri Mar 31 11:12:00 2017 DEBUG main[19855]: check files in /var/vod_ingest
+
+utils
+\\\ can't open directory %dir \\ Невозможно получить список файлов в директории %dir, директория отсутствует или недоступна \\ ERROR \\ Thu Mar 30 12:45:23 2017 ERROR get_files[32480]: can't open directory /var/vod_ingest
+\\\ execution failed: %error \\ Критическая ошибка запуска процесса \\ CRITICAL \\ Thu Mar 30 17:30:51 2017 CRITICAL execute_process[32480]: execution failed: Permission denied
+\\\ using execl() to run process, cmd: %cmd \\ Запуск процесса, команда запуска %cmd \\ DEBUG \\ Thu Mar 30 17:38:54 2017 INFO execute_process[32480]: using execl() to run process
+\\\ create directory %dir \\ Создание директории %dir \\ DEBUG \\ Thu Mar 30 17:07:07 2017 DEBUG create_directory[13641]: create directory /tmp/micromanager/reports/
+
+state_logger
+\\\ write state log \\ Запись лога состояния \\ DEBUG \\ Thu Mar 30 17:37:46 2017 DEBUG log[31031]: write state log
+\\\ error, state log will not be writen \\ Ошибка записи лога состояния \\ WARNING \\ Thu Mar 30 17:35:12 2017 WARNING log[31031]: error, state log will not be writen
+\\\ set logging period: %time \\ Изменение периода записи лога состояния (в секундах) \\ INFO \\ Thu Mar 30 17:07:07 2017 INFO set_time[13641]: set logging period: 0
+\\\ logger unlocked \\ Разблокирована запись лога состояния \\ INFO \\ Thu Mar 30 17:30:35 2017 INFO unlock[29731]: logger unlocked
+\\\ state logger started \\ Запущена запись лога состояния \\ INFO \\ Thu Mar 30 17:30:35 2017 INFO main_thread[29731]: state logger started
+\\\ state logger stopped \\ Запись лога состояния остановлена \\ INFO \\ Thu Mar 30 17:39:33 2017 INFO main_thread[31031]: state logger stopped
+\\\ can't write to file %file \\ Ошибка записи в файл %file \\ WARNING \\ Thu Mar 30 17:30:18 2017 WARNING log[31031]: can't write to file /var/log/micromanager/state.log
+
+process_manager
+\\\ (%stream) process thread stopped... \\ Процесс потока %stream остановлен \\ INFO \\ Fri Mar 31 10:28:33 2017 INFO process_thread_handler[19855]: (0) process thread stopped...
+\\\ (%stream) stream checker read exception \\ Ошибка чтения во время мониторинга потока \\ WARNING \\
+\\\ (%stream) tream checker thread stopped... \\ Мониторинг потока %stream остановлен \\ INFO \\ Thu Mar 30 17:11:14 2017 INFO stream_checker_thread_handler[13641]: (0) stream checker thread stopped...
+\\\ process with PID %pid was killed \\ Процесс с PID %pid остановлен \\ INFO \\
+\\\ (%stream) process using too much memory (%mem), trying to restart \\ Процесс использует слишком много памяти и будет перезапущен \\ WARNING \\
+\\\ (%stream) process using too much cpu (%cpu), trying to restart \\ Процесс использует слишком много процессорного времени и будет перезапущен \\ WARNING \\
+\\\ process '%process_name' with pid %pid using too much memory (%mem), killing \\ Отслеживаемый процесс использует слишком много оперативной памяти и будет завершён \\ WARNING \\
+\\\ process '%process_name' with pid %pid using too much cpu (%cpu), killing \\ Отслеживаемый процесс использует слишком много процессорного времени и будет завершён \\ WARNING \\
+\\\ (%stream) streaming time out, stop \\ Таймаут работы потока, вещание остановлено (если параметр timeout больше нуля) \\ INFO \\
+\\\ (%stream) stream not alive, trying to restart or switch source \\ Превышен максимальное количество попыток проверки доступности потока, возможно, источник потока недоступен или некорректен, будет использован другой источник, либо процесс будет перезапущен \\ WARNING \\ Thu Mar 30 17:39:33 2017 WARNING watch_stream[31031]: (0) stream not alive, trying to restart or switch source
+\\\ (%stream) possible stream not alive %n times \\ Провалилось %n попыток проверки потока \\ INFO \\ Thu Mar 30 17:39:25 2017 INFO watch_stream[31031]: (0) possible stream not alive 4 times
+\\\ (%stream) segmenter not alive, trying to restart or switch source \\ Ошибка работы сегментера, сегментер будет перезапущен \\ WARNING \\
+\\\ (%stream) process not running, trying to restart \\ Процесс мёртв или недоступен и будет перезапущен \\ WARNING \\
+\\\ (%stream) process generate stream with too low bitrate (%byte bps), check %n \\ Битрейт исходящего потока ниже минимально установленного (попытка %n) \\ WARNING \\ Thu Mar 30 17:37:48 2017 WARNING watch_stream[31031]: (0) process generate stream with too low bitrate (0 bps), check 2
+\\\ (%stream) process generate stream with too low bitrate (%byte bps), trying to restart \\ Превышено максимальное количество попыток проверки битрейта, процесс будет перезапущен \\ WARNING \\ Thu Mar 30 17:37:48 2017 WARNING watch_stream[31031]: (0) process generate stream with too low bitrate (0 bps), trying to restart
+\\\ (%stream) executing process... \\ Запуск процесса \\ INFO \\ Thu Mar 30 17:39:07 2017 INFO execute_process[31031]: (0) executing process...
+\\\ (%stream) fork failed: %error \\ Ошибка вызова fork() \\ CRITICAL \\
+\\\ couldn't set thread priority: %error \\ Ошибка установки приоритета процесса \\ WARNING \\
+\\\ (%stream) execution failed: %error \\ Ошибка запуска процесса \\ CRITICAL \\
+\\\ (%stream) process executed, pid %pid \\ Процесс запущен \\ INFO \\ Thu Mar 30 17:39:07 2017 INFO execute_process[31031]: (0) process executed, pid 32764
+\\\ (%stream) process app killed, pid %pid \\ Процесс остановлен \\ INFO \\ Thu Mar 30 17:39:21 2017 INFO execute_process[31031]: (0) process app killed, pid 598
+\\\ (%stream) process app exited with code %code \\ Процесс завершился с кодом выхода %code \\ ERROR \\ Thu Mar 30 17:38:16 2017 ERROR execute_process[31031]: (0) process app exited with code 1
+\\\ (%stream) process app exited via signal  %sig \\ Процесс завершен сигналом %sig \\ ERROR \\ Thu Mar 30 17:38:16 2017 ERROR execute_process[31031]: (0) process app exited via signal 15
+
+startup
+\\\ invalid distribution list array \\ Некорректный список адресов дистрибьюции \\ WARNING \\ Thu Mar 30 17:17:31 2017 WARNING read_config[15342]: invalid distribution list array
+\\\ checking configuration file syntax '%file' \\ Проверка синтаксиса файла конфигурации \\ INFO \\ Thu Mar 30 17:07:07 2017 INFO read_config[13641]: checking configuration file syntax '/etc/micromanager/micromanager.conf
+\\\ reading configuration from file '%file' \\ Чтение конфигурации из файла \\ INFO \\ Thu Mar 30 17:07:07 2017 INFO read_config[13641]: reading configuration from file '/etc/micromanager/micromanager.conf'
+\\\ the number of streams is too big (max %max) \\ Количество потоков в файле конфигурации превышает максимально допустимое (%max), ошибка применения конфигурации \\ ERROR \\ Thu Mar 30 17:18:56 2017 ERROR read_config[15391]: the number of streams is too big (max 512)
+\\\ initialization of stream #%n failed \\ Ошибка инициализации потока с номером %n, ошибка применения конфигурации \\ ERROR \\ Thu Mar 30 17:18:02 2017 ERROR read_config[15379]: initialization of stream #0 failed
+\\\ parsing streams list failed index %n \\ Некорректное описание потока в файле конфигурации, ошибка применения конфигурации \\ ERROR \\ Fri Mar 31 10:28:19 2017 ERROR read_config[19855]: parsing streams list failed index 0
+
+control
+\\\ reloading stream #%n \\ Перезапуск потока с номером %n \\ NOTICE \\ Thu Mar 30 17:03:52 2017 NOTICE reload_stream[13227]: reloading stream #0 'TLC'
+\\\ parsing streams list failed, stream %n does not have any source \\ Некорректное описание потока в файле конфигурации: не указан ни один источник \\  ERROR \\ Fri Mar 31 10:28:19 2017 ERROR read_config[19855]: parsing streams list failed, stream 0 does not have any source
+\\\ stream checker bind failed: %error \\ Ошибка вызова bind() \\ ERROR \\ Thu Mar 30 17:03:52 2017 ERROR reload_stream[13227]: stream checker bind failed: Address already in use
+\\\ stream checker socket error: %error \\ Ошибка инициализации сокета \\ ERROR \\ Thu Mar 30 17:03:52 2017 ERROR reload_stream[13227]: stream checker socket error: Socket type not supported
+\\\ config file name is empty \\ Пустое имя файла конфигурации (при перезагрузке конфигурации) \\ WARNING \\ Fri Mar 31 10:28:19 2017 WARNING reload_config[19855]: config file name is empty
+\\\ reloading stream #%n failed \\ Ошибка перезапуска потока \\ ERROR \\ Fri Mar 31 10:28:19 2017 ERROR reload_config[19855]: reloading stream #0 failed
+\\\ deinit stream #%n because it was not found in configuration \\ Завершается работа потока, так как он отсутствует в новой версии конфигурации (при перезагрузке конфигурации) \\ INFO \\ Fri Mar 31 10:28:19 2017 INFO reload_config[19855]: deinit stream #0 because it was not found in configuration
+\\\ parsing streams list failed at index %n \\ Некорректное описание потока в файле конфигурации (при перезагрузке конфигурации) \\ ERROR \\ Fri Mar 31 10:28:19 2017 ERROR reload_config[19855]: parsing streams list failed at index 0
+\\\ starting streams \\ Запуск всех потоков \\ INFO \\ Thu Mar 30 17:04:13 2017 INFO start_stream[13641]: starting streams
+\\\ starting stream #%n '%stream_name' \\ Запуск потока с номером %n и именем %stream_name \\ INFO \\ Fri Mar 31 10:28:19 2017 INFO start_stream[19855]: starting stream #0 'Еврокино'
+\\\ stream #%n '%stream_name' has already started, update stop timestamp \\ Поток с номером %n и именем %stream_name уже запущен, будет обновлено время его остановки (для потоков с параметром timeout большем 0) \\ INFO \\ Fri Mar 31 10:28:19 2017 INFO start_stream[19855]: stream #0 'Еврокино' has already started, update stop timestamp
+\\\ stopping streams \\ Остановка всех потоков \\ INFO \\ Thu Mar 30 17:04:11 2017 INFO stop_stream[13227]: stopping streams
+\\\ stopping stream #%n '%stream_name' \\ Остановка потока с номером %n и именем %stream_name \\ INFO \\ Thu Mar 30 17:03:52 2017 INFO stop_stream[13227]: stopping stream #0 'TLC'
+
+api
+\\\ networking initialization failed \\ Критическая ошибка инициализации JSON-RPC API \\ ERROR \\ Thu Mar 30 17:06:57 2017 ERROR start_json_rpc[16803]: networking initialization failed
+\\\ json-rpc bind failed \\ Критическая ошибка инициализации JSON-RPC API: ошибка вызова bind(), возможно, сетевой порт уже занят \\ ERROR \\ Thu Mar 30 17:06:57 2017 ERROR start_json_rpc[16803]: json-rpc bind failed
+\\\ json-rpc listen failed \\ Критическая ошибка инициализации JSON-RPC API: ошибка вызова listen() \\ ERROR \\ Thu Mar 30 17:06:57 2017 ERROR start_json_rpc[16803]: json-rpc listen failed
+\\\ starting JSON-RPC server \\ Запущен JSON-RPC API \\ INFO \\ Thu Mar 30 17:03:52 2017 INFO start_json_rpc[13227]: starting JSON-RPC server
+\\\ stopping JSON-RPC server \\ JSON-RPC API остановлен \\ INFO \\ Thu Mar 30 17:04:11 2017 INFO stop_json_rpc[13227]: stopping JSON-RPC server
+\\\ API %method \\ Вызов метода API %method \\ INFO \\ Thu Mar 30 17:11:14 2017 INFO api_set_config[13641]: API set config
+\\\ API %method error (%code): %error \\ Ошибка вызова метода API %method, код ошибки %code \\ WARNING \\ Thu Mar 30 17:10:01 2017 WARNING api_set_config[13641]: API set_config error (221): configuration write error
+
+other
+\\\ %sig received \\ Получен сигнал %sig \\ NOTICE \\ Thu Mar 30 17:04:11 2017 NOTICE signal_handler[13227]: SIGTERM or SIGINT received, stopping...
+\\\ config write error: can't write in file %file_name \\ Ошибка сохранения конфигурации \\ WARNING \\ Thu Mar 30 17:21:56 2017 WARNING write_config[13641]: config write error: can't write in file /etc/micromanager/micromanager.conf
+\\\ backup config, file name: %file_name \\ Резервное копирование файла %file_name \\ DEBUG \\ Thu Mar 30 17:11:14 2017 DEBUG backup_config[13641]: backup config, file name: /etc/micromanager/micromanager.conf
+\\\ backup error: file %file_name does not exist \\ Ошибка резервного копирования: файл %file_name не существует \\ WARNING \\ Thu Mar 30 17:11:14 2017 WARNING backup_config[13641]: backup error: file /etc/micromanager/micromanager.conf does not exist 
+\\\ try to backup config, backup file name: %file_name \\ Сохранение резеврвной копии в файл %file_name \\ INFO \\ Thu Mar 30 17:11:14 2017 INFO backup_config[13641]: try to backup config, backup file name: /etc/micromanager/micromanager.conf-2017-3-30-17:11:14
+\\\ can't write file %file_name, backup error \\ Ошибка резервного копирования: ошибка записи в файл %file_name \\ WARNING \\ Thu Mar 30 17:11:14 2017 WARNING backup_config[13641]: can't write file /etc/micromanager/micromanager.conf-2017-3-30-17:11:14, backup error
+\\\ restore config, backup file name: %file_name \\ Восстановление конфигурации из резервной копии \\ INFO \\ Thu Mar 30 17:31:20 2017 INFO restore_config[13641]: restore config, backup file name: /etc/micromanager/micromanager.conf-2017-3-30-17:01:12
+\\\ configuration restoring failed \\ Ошибка восстановления конфигурации \\ ERROR \\ Thu Mar 30 17:31:20 2017 INFO restore_config[13641]: configuration restoring failed
+\\\ configuration file not found '%file_name' \\  Не найден файл конфигурации \\ CRITICAL \\ Thu Mar 30 17:28:42 2017 CRITICAL read_json_config_from_file[13641]: configuration file not found '/etc/micromanager/micromanager.conf'
+\\\ configuration parsing failed: %error \\ Ошибка разбора конфигурации \\ ERROR \\ Fri Mar 31 12:04:15 2017 ERROR read_json_config_from_file[14290]: configuration parsing failed * Line 44, Column 19, Missing '}' or object member name
+\\\ get streams list \\ Запрос списка потоков \\ DEBUG \\ Fri Mar 31 12:08:46 2017 DEBUG get_streams_list[15074]: get streams list
+
