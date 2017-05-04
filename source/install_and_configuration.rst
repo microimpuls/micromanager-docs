@@ -68,6 +68,10 @@ Micromanager, а также все сопутствующие пакеты и н
         "vod-ingestion-path-checking-period": 15,
         "vod-ffmpeg-use-progress": true,
         "vod-default-naming-template": "/%preset_name%/%src_path_wo_ext%.mp4",
+        
+        "vod-ingestion-limit": 10,
+        "vod-distribution-limit": 10,
+        "vod-archive-limit": 10,
 
         "process-memory-limit": 512000,
         "process-cpu-limit": 0,
@@ -223,6 +227,21 @@ vod-distribution-addresses ``list``
   
   Список адресов дистрибьюции.
   Формат описан в :ref:`vod-distribution-addresses <micromanager-vod-distribution-addresses>`.
+
+vod-ingestion-limit ``int``
+  *С версии 1.7.0*
+  
+  Максимальное количество одновременно выполняемых задач инжестирования. Если -1, то неграниченно. По умолчанию -1.
+  
+vod-distribution-limit ``int``
+  *С версии 1.7.0*
+  
+  Максимальное количество одновременно выполняемых задач дистрибьюции. Если -1, то неграниченно. По умолчанию -1.
+  
+vod-archive-limit ``int``
+  *С версии 1.7.0*
+  
+  Если больше нуля, то определяет количество последних выполненных или отменнённых задач, о которых micromanager будет сохранять информацию. По умолчанию 0.
   
 process-memory-limit ``int``
   Лимит потребляемой оперативной памяти в байтах для основного процесса micromanager. По достижению этого лимита
