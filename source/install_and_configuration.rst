@@ -59,6 +59,7 @@ Micromanager, а также все сопутствующие пакеты и н
                 "run-cmd": "/usr/local/bin/ffmpeg -i %src% %ffmpeg-params% -f mpegts udp://@%dsthost%:%dstport%?pkt_size=%payloadsize%"
             }
         ],
+        "run-link-stderr": false,
 
         "transcoder-path": "/usr/local/bin/ffmpeg",
         "ffprobe-path": "/usr/local/bin/ffprobe",
@@ -66,7 +67,7 @@ Micromanager, а также все сопутствующие пакеты и н
         "vod-directory": "/opt/storage/vod",
         "vod-ingest-directory": "/opt/storage/vod_ingest/",
         "vod-ingestion-path-checking-period": 15,
-        "vod-ffmpeg-use-progress": true,
+        "vod-ffmpeg-use-progress": false,
         "vod-default-naming-template": "/%preset_name%/%src_path_wo_ext%.mp4",
 
         "process-memory-limit": 512000,
@@ -157,9 +158,11 @@ run-cmd-presets ``list``
 run-link-stderr ``bool``
   *С версии 1.4.5*
   
+  *Для перехвата сообщений об ошибках ffmpeg рекомендуется использовать перенаправление вывода с параметром -nostats вместо данной функции.*
+  
   Включает перехват потока stderr при запуске процесса.
-  Если при завершении процесс вернёт код, отличный от 0, то из stderr будет прочитано не более 1500 байт и записано в лог.
-  Перехват производится только для процессов инжестирования и дистрибьюции.
+  Если при завершении процесс вернёт код, отличный от 0, то из stderr будет прочитано не более 500 байт и записано в лог.
+  Перехват производится только для процессов инжестирования и дистрибьюции.  
   По умолчанию false.
 
 transcoder-path ``str``
